@@ -1,0 +1,405 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section id="hero" class="hero-section d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+        <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+            <h5 class="accent-text orbitron fw-bold mb-3 ls-5">WELCOME TO THE FUTURE</h5>
+            <h1 class="display-1 fw-black mb-3 glow-text orbitron">SNEHA S KRISHNAN</h1>
+            <h2 class="h2 mb-4 text-white thin orbitron">A <span id="typed" class="accent-text"></span></h2>
+            <p class="lead text-white-50 mb-5 max-w-700 mx-auto">
+                Navigating the digital cosmos with Python & Django. Building frictionless experiences in the weightless
+                environment of the web.
+            </p>
+            <div class="d-flex gap-4 justify-content-center">
+                <a href="#contact" class="btn btn-neon-blue btn-lg px-5 py-3 orbitron magnetic">INITIATE CONTACT</a>
+                <a href="#projects" class="btn btn-outline-neon btn-lg px-5 py-3 orbitron magnetic">VIEW MISSIONS</a>
+            </div>
+        </div>
+        <div class="scroll-indicator mt-5">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrows">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section-padding relative overflow-hidden">
+    <div class="container relative z-1">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="glass-card-wrapper p-2">
+                    <div class="glass-card floating-card">
+                        <img src="{% static 'core/sneha pic.png' %}" alt="About Me" class="img-fluid rounded-4">
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+                <h2 class="section-title orbitron glow-text mb-5">BIOGRAPHICAL DATA</h2>
+                <div class="glass-card p-4 p-md-5 mb-4 border-left-neon">
+                    <p class="text-white-50 mb-4 lead">I am a highly motivated Python Full Stack Developer with a solid
+                        foundation
+                        in Computer Science, currently advancing my trajectory via MCA.</p>
+                    <p class="text-white-50 mb-4">During my tenure at **INet Infotech**, I engineered scalable web
+                        solutions, including **SHOPZEN**, a high-performance E-commerce platform. I specialize in
+                        defying the gravity of legacy systems through clean, efficient code and futuristic UI/UX.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-sm-6">
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="icon-glow me-3"><i class="fas fa-microchip accent-text"></i></div>
+                            <span class="text-white orbitron small">CORE: PYTHON / DJANGO</span>
+                        </div>
+                        <div class="feature-item d-flex align-items-center">
+                            <div class="icon-glow me-3"><i class="fas fa-layers-group accent-text"></i></div>
+                            <span class="text-white orbitron small">FULL STACK ARCHITECTURE</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="icon-glow me-3"><i class="fas fa-atom accent-text"></i></div>
+                            <span class="text-white orbitron small">SCALABLE SYSTEMS</span>
+                        </div>
+                        <div class="feature-item d-flex align-items-center">
+                            <div class="icon-glow me-3"><i class="fas fa-palette accent-text"></i></div>
+                            <span class="text-white orbitron small">NEO-GLASS UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- Skills Section -->
+<section id="skills" class="section-padding bg-cosmic-gradient">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title orbitron glow-text mx-auto">TECHNICAL ARSENAL</h2>
+            <p class="text-white-50 orbitron small mt-3">POWERING THE DIGITAL ENGINE</p>
+        </div>
+
+        <div class="row g-5">
+            {% for skill in skills %}
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|add:1 }}00">
+                <div class="skill-card-futuristic p-4 glass-card h-100" data-tilt data-tilt-max="15"
+                    data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.3">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="skill-icon-outer me-3">
+                            <i class="{{ skill.icon_class|default:'fab fa-dev' }} fs-2 accent-text"></i>
+                        </div>
+                        <h5 class="orbitron text-white mb-0">{{ skill.name }}</h5>
+                    </div>
+
+                    <div class="skill-meter-wrapper">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white-50 small orbitron">STABILITY</span>
+                            <span class="accent-text small orbitron">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="progress-futuristic">
+                            <div class="progress-inner" style="width: 0%" data-proficiency="{{ skill.proficiency }}">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default Skills Display -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                <div class="skill-card-futuristic p-4 glass-card h-100" data-tilt>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="skill-icon-outer me-3">
+                            <i class="fab fa-python fs-2 accent-text"></i>
+                        </div>
+                        <h5 class="orbitron text-white mb-0">PYTHON</h5>
+                    </div>
+                    <div class="progress-futuristic">
+                        <div class="progress-inner" style="width: 0%" data-proficiency="90">
+                            <div class="progress-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="skill-card-futuristic p-4 glass-card h-100" data-tilt>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="skill-icon-outer me-3">
+                            <i class="fab fa-dev fs-2 accent-text"></i>
+                        </div>
+                        <h5 class="orbitron text-white mb-0">DJANGO</h5>
+                    </div>
+                    <div class="progress-futuristic">
+                        <div class="progress-inner" style="width: 0%" data-proficiency="85">
+                            <div class="progress-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- Projects Section -->
+<section id="projects" class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title orbitron glow-text mx-auto">DEPLOYED MISSIONS</h2>
+            <p class="text-white-50 orbitron small mt-3">SELECT STRATEGIC OPERATIONS</p>
+        </div>
+
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+                <div class="project-card-futuristic glass-card h-100 overflow-hidden" data-tilt data-tilt-max="10">
+                    <div class="project-img-container">
+                        {% if project.image %}
+                        <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}">
+                        {% else %}
+                        <img src="https://via.placeholder.com/600x400/0a0a0f/7a00ff?text=MISSION+ASSET"
+                            class="img-fluid" alt="Project">
+                        {% endif %}
+                        <div class="img-overlay-neon"></div>
+                    </div>
+                    <div class="card-body p-4 relative z-1">
+                        <h5 class="orbitron text-white fw-bold mb-3 glow-text-sm">{{ project.title }}</h5>
+                        <p class="text-white-50 small mb-4">{{ project.description|truncatewords:20 }}</p>
+                        <div class="tech-badges mb-4">
+                            {% for tech in project.technologies.split|slice:":3" %}
+                            <span class="badge-futuristic">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <a href="{{ project.link|default:'#' }}" class="btn-link-neon orbitron small">LIVE LINK <i
+                                    class="fas fa-satellite mx-1"></i></a>
+                            <a href="{{ project.github_link|default:'#' }}" class="text-white glow-hover"><i
+                                    class="fab fa-github fs-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default Mission -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="project-card-futuristic glass-card h-100 overflow-hidden" data-tilt>
+                    <div class="project-img-container">
+                        <img src="https://via.placeholder.com/600x400/0a0a0f/00f0ff?text=SHOPZEN+INTERFACE"
+                            class="img-fluid" alt="SHOPZEN">
+                        <div class="img-overlay-neon"></div>
+                    </div>
+                    <div class="card-body p-4 relative z-1">
+                        <h5 class="orbitron text-white fw-bold mb-3 glow-text-sm">PROJECT: SHOPZEN</h5>
+                        <p class="text-white-50 small mb-4">A high-velocity Django e-commerce hub with quantum cart
+                            logic and secure encrypted checkout.</p>
+                        <div class="tech-badges mb-4">
+                            <span class="badge-futuristic">DJANGO</span>
+                            <span class="badge-futuristic">PYTHON</span>
+                            <span class="badge-futuristic">POSTGRES</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn-link-neon orbitron small">EXPLORE <i
+                                    class="fas fa-rocket mx-1"></i></a>
+                            <a href="#" class="text-white glow-hover"><i class="fab fa-github fs-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- Timeline Section -->
+<section id="education" class="section-padding bg-cosmic-black">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title orbitron glow-text mx-auto">CHRONOLOGICAL TRAJECTORY</h2>
+        </div>
+
+        <div class="futuristic-timeline">
+            <!-- Timeline Path Line -->
+            <div class="timeline-path"></div>
+
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h3 class="orbitron text-white mb-5 d-flex align-items-center" data-aos="fade-right">
+                        <span class="timeline-heading-icon me-3"><i class="fas fa-user-graduate"></i></span>
+                        ACADEMIC NODES
+                    </h3>
+
+                    <div class="timeline-nodes">
+                        {% for edu in education %}
+                        <div class="timeline-node" data-aos="fade-right">
+                            <div class="node-marker shadow-neon-blue"></div>
+                            <div class="glass-card p-4">
+                                <span class="badge-neon mb-2 orbitron small">{{ edu.year }}</span>
+                                <h5 class="text-white fw-bold orbitron">{{ edu.degree }}</h5>
+                                <p class="accent-text small orbitron mb-2">{{ edu.institution }}</p>
+                                <p class="text-white-50 small mb-0">{{ edu.description }}</p>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div class="timeline-node" data-aos="fade-right">
+                            <div class="node-marker shadow-neon-blue"></div>
+                            <div class="glass-card p-4">
+                                <span class="badge-neon mb-2 orbitron small">PRESENT</span>
+                                <h5 class="text-white fw-bold orbitron">MCA: MASTER OF COMPUTER APPLICATIONS</h5>
+                                <p class="accent-text small orbitron mb-0">CURRENT MISSION</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h3 class="orbitron text-white mb-5 d-flex align-items-center" data-aos="fade-left">
+                        <span class="timeline-heading-icon me-3"><i class="fas fa-satellite-dish"></i></span>
+                        FIELD OPERATIONS
+                    </h3>
+
+                    <div class="timeline-nodes">
+                        <div class="timeline-node" data-aos="fade-left">
+                            <div class="node-marker shadow-neon-violet"></div>
+                            <div class="glass-card p-4 highlight-violet">
+                                <span class="badge-neon-violet mb-2 orbitron small">AUG 2023 - DEC 2023</span>
+                                <h5 class="text-white fw-bold orbitron text-uppercase">PYTHON FULL STACK INTERN</h5>
+                                <p class="accent-violet small orbitron mb-2">INET INFOTECH</p>
+                                <p class="text-white-50 small mb-0">Engineered robust backends, optimized neural-paths
+                                    of databases, and deployed scalable solutions across the digital ether.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- Contact Section -->
+<section id="contact" class="section-padding relative">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title orbitron glow-text mx-auto">TRANSMISSION CHANNEL</h2>
+            <p class="text-white-50 orbitron small mt-3">ESTABLISH SECURE COMMUNICATION</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="glass-card contact-container overflow-hidden" data-aos="zoom-in">
+                    <div class="row g-0">
+                        <div class="col-lg-5 p-5 contact-info-panel">
+                            <h4 class="orbitron fw-bold mb-4 white-glow">BASE COORDINATES</h4>
+                            <p class="text-white-50 mb-5 orbitron small">Awaiting signals from across the digital
+                                galaxy.</p>
+
+                            <div class="contact-node d-flex mb-4 align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">E-MAIL ID</span>
+                                    <span class="text-white orbitron small"><a href="mailto:snehasksrd@gmail.com" style="color: inherit; text-decoration: none;">SNEHASKSRD@GMAIL.COM</a></span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node d-flex mb-4 align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">SECTOR</span>
+                                    <span class="text-white orbitron small">KOLLAM, KERALA, INDIA</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node d-flex mb-4 align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">COMM-LINK</span>
+                                    <span class="text-white orbitron small"><a href="https://www.linkedin.com/in/sneha-s-krishnan-9a9721273" target="_blank" style="color: inherit; text-decoration: none;">linkedin.com/in/sneha-s-krishnan-9a9721273</a></span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node d-flex align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">GITHUB-LINK</span>
+                                    <span class="text-white orbitron small"><a href="https://github.com/fullstack-kallu" target="_blank" style="color: inherit; text-decoration: none;">github.com/fullstack-kallu</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 p-5">
+                            <form method="post" id="contactForm" class="futuristic-form">
+                                {% csrf_token %}
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">IDENTIFIER</label>
+                                            {{ form.name }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">SIGNAL ADDRESS</label>
+                                            {{ form.email }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">TRANSMISSION
+                                                SUBJECT</label>
+                                            {{ form.subject }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">ENCODED MESSAGE</label>
+                                            {{ form.message }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit"
+                                            class="btn btn-neon-violet w-100 py-3 orbitron magnetic mt-3">
+                                            SEND TRANSMISSION <i class="fas fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="border-trace"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

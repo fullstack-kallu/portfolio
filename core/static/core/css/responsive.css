@@ -1,0 +1,73 @@
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  /* Mobile */
+  .navbar {
+    padding: 10px 0;
+  }
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 12px !important;
+  }
+  .hero-section {
+    padding: 60px 0;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-img {
+    max-width: 250px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .skill-pill {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  .project-img-wrapper {
+    height: 150px;
+  }
+  .project-title {
+    font-size: 1rem;
+  }
+  .footer-wavy {
+    padding: 40px 0 20px;
+  }
+  .footer-logo {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  /* Tablet */
+  .navbar {
+    padding: 15px 0;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+  .hero-img {
+    max-width: 300px;
+  }
+  .section-title {
+    font-size: 2.3rem;
+  }
+  .project-img-wrapper {
+    height: 180px;
+  }
+  .project-title {
+    font-size: 1.1rem;
+  }
+  .footer-wavy {
+    padding: 50px 0 30px;
+  }
+}

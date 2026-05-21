@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact | Sneha S Krishnan{% endblock %}
+
+{% block content %}
+<section id="contact" class="section-padding relative min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title orbitron glow-text mx-auto">TRANSMISSION CHANNEL</h2>
+            <p class="text-white-50 orbitron small mt-3">ESTABLISH SECURE COMMUNICATION</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="glass-card contact-container overflow-hidden" data-aos="zoom-in">
+                    <div class="row g-0">
+                        <div class="col-lg-5 p-5 contact-info-panel">
+                            <h4 class="orbitron fw-bold mb-4 white-glow">BASE COORDINATES</h4>
+                            <p class="text-white-50 mb-5 orbitron small">Awaiting signals from across the digital
+                                galaxy.</p>
+
+                            <div class="contact-node d-flex mb-4 align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">E-MAIL ID</span>
+                                    <span class="text-white orbitron small"><a href="mailto:snehasksrd@gmail.com" style="color: inherit; text-decoration: none;">SNEHASKSRD@GMAIL.COM</a></span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node d-flex mb-4 align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">SECTOR</span>
+                                    <span class="text-white orbitron small">KOLLAM, KERALA, INDIA</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node d-flex mb-4 align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">COMM-LINK</span>
+                                    <span class="text-white orbitron small"><a href="https://www.linkedin.com/in/sneha-s-krishnan-9a9721273" target="_blank" style="color: inherit; text-decoration: none;">linkedin.com/in/sneha-s-krishnan-9a9721273</a></span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node d-flex align-items-center">
+                                <div class="node-icon-hex me-3">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <span class="orbitron small text-white-50 d-block">GITHUB-LINK</span>
+                                    <span class="text-white orbitron small"><a href="https://github.com/fullstack-kallu" target="_blank" style="color: inherit; text-decoration: none;">github.com/fullstack-kallu</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 p-5">
+                            <form method="post" id="contactForm" class="futuristic-form">
+                                {% csrf_token %}
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">IDENTIFIER</label>
+                                            {{ form.name }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">SIGNAL ADDRESS</label>
+                                            {{ form.email }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">TRANSMISSION
+                                                SUBJECT</label>
+                                            {{ form.subject }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group-futuristic">
+                                            <label class="orbitron small text-white-50 mb-2">ENCODED MESSAGE</label>
+                                            {{ form.message }}
+                                            <div class="input-glow-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit"
+                                            class="btn btn-neon-violet w-100 py-3 orbitron magnetic mt-3">
+                                            SEND TRANSMISSION <i class="fas fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

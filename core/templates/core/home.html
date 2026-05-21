@@ -1,0 +1,309 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sneha S Krishnan | Full Stack Developer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="hero-greeting">Hi, I'm <i class="fas fa-leaf fa-sm"></i></div>
+                <h1 class="hero-title">
+                    Sneha<br>S Krishnan
+                </h1>
+                <h2 class="hero-subtitle">Python Full Stack Developer & AI Enthusiast</h2>
+                <p class="hero-desc">
+                    I build scalable, efficient and user-centric web applications and AI-powered solutions that solve
+                    real-world problems and make an impact.
+                </p>
+                <div class="d-flex align-items-center gap-3 mb-5">
+                    <a href="#projects" class="btn-primary-custom">View My Work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn-outline-custom">Download Resume <i class="fas fa-download ms-1"></i></a>
+                    <a href="#contact" class="btn-icon-only"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);">Connect with
+                        me</span>
+                    <a href="https://github.com/fullstack-kallu" target="_blank" class="btn-icon-only"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sneha-s-krishnan-9a9721273" target="_blank"
+                        class="btn-icon-only"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:snehasksrd@gmail.com" class="btn-icon-only"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 position-relative text-center" data-aos="fade-left">
+                <div class="organic-blob"></div>
+                <div class="hero-image-wrapper">
+                    <img src="{% static 'core/sneha pic.png' %}" alt="Sneha" class="hero-img">
+                </div>
+                <!-- Floating Elements -->
+                <div class="position-absolute"
+                    style="top: 10%; left: 10%; background: #EBE5D9; padding: 10px 15px; border-radius: 20px; font-weight: 700; color: var(--text-secondary); opacity: 0.8;">
+                    &lt;/&gt;
+                </div>
+                <div class="position-absolute"
+                    style="bottom: 20%; right: 5%; background: #fff; border: 1px solid var(--border-color); padding: 10px 15px; border-radius: 10px; font-weight: 700; color: var(--text-secondary); display: flex; gap: 5px;">
+                    <span
+                        style="width: 8px; height: 8px; border-radius: 50%; background: #ddd; margin-top: 6px;"></span>
+                    <span
+                        style="width: 8px; height: 8px; border-radius: 50%; background: #ddd; margin-top: 6px;"></span>
+                    <span
+                        style="width: 8px; height: 8px; border-radius: 50%; background: #ddd; margin-top: 6px;"></span>
+                    <span class="ms-2">&lt; / &gt;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section & Stats -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-up">
+                <div class="section-tag">About Me</div>
+                <h2 class="section-title mb-4">I turn ideas into <em
+                        style="font-family: var(--font-serif); font-style: italic; color: var(--accent-color);">meaningful</em><br>digital
+                    experiences.</h2>
+                <p class="text-secondary mb-4" style="line-height: 1.8;">
+                    I'm an MCA student passionate about Python Full Stack Development, AI and building clean, efficient
+                    and scalable web applications. I enjoy learning new technologies and solving real-world problems
+                    through code.
+                </p>
+                <a href="#experience" class="btn-primary-custom">More About Me <i class="fas fa-arrow-right"></i></a>
+
+                <!-- Decorative plant image representation -->
+                <div class="mt-4 opacity-50">
+                    <i class="fas fa-seedling fa-3x" style="color: var(--text-secondary);"></i>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-4">
+                    <div class="col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-code"></i></div>
+                            <div class="stat-value">4+</div>
+                            <div class="stat-label">Projects<br>Completed</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-award"></i></div>
+                            <div class="stat-value">10+</div>
+                            <div class="stat-label">Technologies<br>Learned</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Internship<br>Experience</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="stat-value"><i class="fas fa-infinity fa-sm"></i></div>
+                            <div class="stat-label">Passion to<br>Learn</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills Pill List -->
+        <div id="skills" class="mt-5 pt-5" data-aos="fade-up">
+            <div class="section-tag mb-4">Technical Skills</div>
+            <div class="d-flex flex-wrap gap-3">
+                {% for skill in skills %}
+                <div class="skill-pill">
+                    <i class="{{ skill.icon_class|default:'fas fa-check-circle' }}"
+                        style="color: var(--text-secondary);"></i> {{ skill.name }}
+                </div>
+                {% empty %}
+                <div class="skill-pill"><i class="fab fa-python" style="color: #3776AB;"></i> Python</div>
+                <div class="skill-pill"><i class="fas fa-code" style="color: #092E20;"></i> Django</div>
+                <div class="skill-pill"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript</div>
+                <div class="skill-pill"><i class="fab fa-html5" style="color: #E34F26;"></i> HTML5</div>
+                <div class="skill-pill"><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS3</div>
+                <div class="skill-pill"><i class="fab fa-bootstrap" style="color: #7952B3;"></i> Bootstrap</div>
+                <div class="skill-pill"><i class="fas fa-database" style="color: #003B57;"></i> SQLite</div>
+                <div class="skill-pill"><i class="fas fa-database" style="color: #4479A1;"></i> MySQL</div>
+                <div class="skill-pill"><i class="fab fa-git-alt" style="color: #F05032;"></i> Git</div>
+                <div class="skill-pill"><i class="fab fa-github" style="color: #181717;"></i> GitHub</div>
+                <div class="skill-pill"><i class="fas fa-robot" style="color: #00A67E;"></i> AI / LLM</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5" data-aos="fade-up">
+            <div class="section-tag mb-0">Featured Projects</div>
+            <a href="#" class="text-primary-custom"
+                style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">View All Projects <i
+                    class="fas fa-arrow-right ms-1"></i></a>
+        </div>
+
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        {% if 'SHOPZEN' in project.title %}
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"
+                            alt="{{ project.title }}">
+                        {% elif 'Blood Bank' in project.title %}
+                        <img src="https://images.unsplash.com/photo-1536856136534-bb679c52a9aa?auto=format&fit=crop&q=80&w=600"
+                            alt="{{ project.title }}">
+                        {% elif 'PowerTrack' in project.title %}
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=600"
+                            alt="{{ project.title }}">
+                        {% elif 'QEval' in project.title %}
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=600"
+                            alt="{{ project.title }}">
+                        {% else %}
+                        <img src="https://via.placeholder.com/600x400/F0EDE1/384A36?text=Project+Image" alt="Project">
+                        {% endif %}
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">
+                            {{ project.title|truncatechars:20 }}
+                            <a href="{{ project.link|default:'#' }}" class="btn-icon-only"
+                                style="width: 32px; height: 32px;"><i
+                                    class="fas fa-arrow-up-right-from-square fa-sm"></i></a>
+                        </div>
+                        <div class="project-type">{{ project.title|slice:"22:"|default:"Web Application" }}</div>
+                        <p class="project-desc">{{ project.description|truncatechars:100 }}</p>
+                        <div class="d-flex flex-wrap">
+                            {% for tech in project.technologies.split %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Experience & Let's Connect -->
+<section id="experience" class="experience-section">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Left Column: Experience -->
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="section-tag mb-5">Experience</div>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="timeline-item position-relative">
+                            <!-- Line connecting nodes if there were multiple -->
+                            <div class="position-absolute"
+                                style="left: 24px; top: 50px; bottom: -50px; width: 2px; background: var(--border-color); z-index: 1;">
+                            </div>
+
+                            <div class="timeline-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Python Full Stack Developer Intern</h4>
+                                <div class="timeline-meta">
+                                    INet Infotech, Ernakulam &nbsp;|&nbsp; Aug 2023 - Dec 2023
+                                </div>
+                                <ul>
+                                    <li>Designed and developed multiple web application modules using Python, Django,
+                                        HTML/CSS, Bootstrap, jQuery and JavaScript.</li>
+                                    <li>Built and integrated core features of SHOPZEN — an e-commerce platform including
+                                        product listings, cart and secure checkout.</li>
+                                    <li>Worked with SQLite database to design schemas, write queries and integrate with
+                                        Django ORM.</li>
+                                    <li>Collaborated with team members to test, debug and deploy features within
+                                        deadlines.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 mt-4 mt-md-0">
+                        <div class="quote-box h-100 d-flex flex-column justify-content-center">
+                            <div class="quote-icon">&ldquo;</div>
+                            <div class="quote-text">
+                                Code is not just what I write, it's how I solve problems and create impact.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Let's Connect -->
+            <div class="col-lg-4" id="contact" data-aos="fade-left">
+                <div class="section-tag mb-5">Let's Connect</div>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-item-text"><a href="mailto:snehasksrd@gmail.com">snehasksrd@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-item-text">+91 8304099734</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-item-text">Kollam, Kerala, India</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div class="contact-item-text"><a href="https://www.linkedin.com/in/sneha-s-krishnan-9a9721273"
+                                target="_blank">linkedin.com/in/sneha-s-krishnan-9a9721273</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+                        <div class="contact-item-text"><a href="https://github.com/fullstack-kallu"
+                                target="_blank">github.com/fullstack-kallu</a></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 p-5">
+
+                    <h5 class="mb-3" style="font-family: var(--font-serif); font-weight: 600;">
+                        Send a Message
+                    </h5>
+
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control-custom" name="name" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="form-control-custom" name="email" placeholder="Your Email"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control-custom" name="subject" placeholder="Subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control-custom" name="message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary-custom w-100 justify-content-center">
+
+                            Send Message
+                            <i class="fas fa-paper-plane fs-6 ms-1"></i>
+
+                        </button>
+                    </form>
+                </div>
+                {% endblock %}

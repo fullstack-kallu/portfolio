@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Skills | Sneha S Krishnan{% endblock %}
+
+{% block content %}
+<section id="skills" class="section-padding bg-cosmic-gradient min-vh-100">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title orbitron glow-text mx-auto">TECHNICAL ARSENAL</h2>
+            <p class="text-white-50 orbitron small mt-3">POWERING THE DIGITAL ENGINE</p>
+        </div>
+
+        <div class="row g-5">
+            {% for skill in skills %}
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|add:1 }}00">
+                <div class="skill-card-futuristic p-4 glass-card h-100" data-tilt data-tilt-max="15"
+                    data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.3">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="skill-icon-outer me-3">
+                            <i class="{{ skill.icon_class|default:'fab fa-dev' }} fs-2 accent-text"></i>
+                        </div>
+                        <h5 class="orbitron text-white mb-0">{{ skill.name }}</h5>
+                    </div>
+
+                    <div class="skill-meter-wrapper">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white-50 small orbitron">STABILITY</span>
+                            <span class="accent-text small orbitron">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="progress-futuristic">
+                            <div class="progress-inner" style="width: 0%" data-proficiency="{{ skill.proficiency }}">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default Skills Display -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                <div class="skill-card-futuristic p-4 glass-card h-100" data-tilt>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="skill-icon-outer me-3">
+                            <i class="fab fa-python fs-2 accent-text"></i>
+                        </div>
+                        <h5 class="orbitron text-white mb-0">PYTHON</h5>
+                    </div>
+                    <div class="progress-futuristic">
+                        <div class="progress-inner" style="width: 0%" data-proficiency="90">
+                            <div class="progress-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
