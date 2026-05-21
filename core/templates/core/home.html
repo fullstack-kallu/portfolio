@@ -20,7 +20,7 @@
                 </p>
                 <div class="d-flex align-items-center gap-3 mb-5">
                     <a href="#projects" class="btn-primary-custom">View My Work <i class="fas fa-arrow-right"></i></a>
-                    <a href="#" class="btn-outline-custom">Download Resume <i class="fas fa-download ms-1"></i></a>
+                    <a href="{% static 'core/sneha proffesional_Resume.pdf' %}" class="btn-outline-custom">Download Resume <i class="fas fa-download ms-1"></i></a>
                     <a href="#contact" class="btn-icon-only"><i class="fas fa-envelope"></i></a>
                 </div>
                 <div class="d-flex align-items-center gap-3">
@@ -145,7 +145,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-5" data-aos="fade-up">
             <div class="section-tag mb-0">Featured Projects</div>
-            <a href="#" class="text-primary-custom"
+            <a href="https://github.com/fullstack-kallu" target="_blank" class="text-primary-custom"
                 style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">View All Projects <i
                     class="fas fa-arrow-right ms-1"></i></a>
         </div>
@@ -156,28 +156,28 @@
                 <div class="project-card">
                     <div class="project-img-wrapper">
                         {% if 'SHOPZEN' in project.title %}
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"
-                            alt="{{ project.title }}">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#384A36 0%,#5a7a56 100%);color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:1px;">
+                            <i class="fas fa-shopping-bag fa-2x" style="opacity:0.6;"></i>
+                        </div>
                         {% elif 'Blood Bank' in project.title %}
-                        <img src="https://images.unsplash.com/photo-1536856136534-bb679c52a9aa?auto=format&fit=crop&q=80&w=600"
-                            alt="{{ project.title }}">
+                        <img src="{% static 'core/user page.png' %}" alt="{{ project.title }}">
                         {% elif 'PowerTrack' in project.title %}
-                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=600"
-                            alt="{{ project.title }}">
+                        <img src="{% static 'core/powertrack landing page.png' %}" alt="{{ project.title }}">
                         {% elif 'QEval' in project.title %}
-                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=600"
-                            alt="{{ project.title }}">
+                        <img src="{% static 'core/landing page.png' %}" alt="{{ project.title }}">
                         {% else %}
-                        <img src="https://via.placeholder.com/600x400/F0EDE1/384A36?text=Project+Image" alt="Project">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#EBE5D9 0%,#d4cbb8 100%);color:#384A36;font-size:1.2rem;font-weight:600;">
+                            <i class="fas fa-code fa-2x" style="opacity:0.4;"></i>
+                        </div>
                         {% endif %}
                     </div>
                     <div class="project-body">
                         <div class="project-title">
                             {{ project.title|truncatechars:20 }}
-                            <a href="{{ project.link|default:'#' }}" class="btn-icon-only"
-                                style="width: 32px; height: 32px;"><i
-                                    class="fas fa-arrow-up-right-from-square fa-sm"></i></a>
-                        </div>
+                            <a href="{{ project.github_link|default:project.link|default:'#' }}" class="btn-icon-only" target="_blank"
+                            style="width: 32px; height: 32px;">
+                            <i class="fas fa-arrow-up-right-from-square fa-sm"></i>
+                        </a></div>
                         <div class="project-type">{{ project.title|slice:"22:"|default:"Web Application" }}</div>
                         <p class="project-desc">{{ project.description|truncatechars:100 }}</p>
                         <div class="d-flex flex-wrap">
@@ -306,4 +306,8 @@
                         </button>
                     </form>
                 </div>
-                {% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

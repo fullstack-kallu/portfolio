@@ -52,24 +52,28 @@ def populate():
         title='SHOPZEN \u2014 E-Commerce Platform',
         description='Full-featured online shopping website with authentication, cart, order management, and responsive UI.',
         technologies='Python, Django, Bootstrap, SQLite',
+        github_link='https://github.com/fullstack-kallu/SHOPZEN',
         order=1
     )
     Project.objects.create(
         title='Blood Bank Management System',
         description='System for managing blood donors, blood requests, availability tracking, and hospital coordination.',
         technologies='Python, Django, MySQL',
+        github_link='https://github.com/fullstack-kallu/Blood-Bank-Management-System',
         order=2
     )
     Project.objects.create(
         title='PowerTrack \u2014 Electricity Complaint Management System',
         description='Citizens can report power issues with location and images. Officers can track and resolve complaints.',
         technologies='Python, Django, Bootstrap, SQLite',
+        github_link='https://github.com/fullstack-kallu/PowerTrack',
         order=3
     )
     Project.objects.create(
         title='QEval AI \u2014 LLM-Based Question Paper Quality Checker',
         description='AI-powered system that evaluates question papers using LLMs for quality, difficulty balance, repetition, and syllabus coverage.',
         technologies='Python, AI/LLM, NLP, Flask',
+        github_link='https://github.com/fullstack-kallu/QEval-AI',
         order=4
     )
 
