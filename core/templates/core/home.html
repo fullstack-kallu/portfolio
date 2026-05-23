@@ -13,14 +13,15 @@
                 <h1 class="hero-title">
                     Sneha<br>S Krishnan
                 </h1>
-                <h2 class="hero-subtitle">Python Full Stack Developer & AI Enthusiast</h2>
+                <h2 class="hero-subtitle">Python Full Stack Developer </h2>
                 <p class="hero-desc">
-                    I build scalable, efficient and user-centric web applications and AI-powered solutions that solve
-                    real-world problems and make an impact.
+                    I enjoy building clean, responsive, and user-friendly web applications using Python and Django.
+                    Passionate about learning new technologies and creating practical digital solutions.
                 </p>
                 <div class="d-flex align-items-center gap-3 mb-5">
                     <a href="#projects" class="btn-primary-custom">View My Work <i class="fas fa-arrow-right"></i></a>
-                    <a href="{% static 'core/sneha proffesional_Resume.pdf' %}" class="btn-outline-custom">Download Resume <i class="fas fa-download ms-1"></i></a>
+                    <a href="{% static 'core/sneha proffesional_Resume.pdf' %}" class="btn-outline-custom">Download
+                        Resume <i class="fas fa-download ms-1"></i></a>
                     <a href="#contact" class="btn-icon-only"><i class="fas fa-envelope"></i></a>
                 </div>
                 <div class="d-flex align-items-center gap-3">
@@ -68,9 +69,11 @@
                         style="font-family: var(--font-serif); font-style: italic; color: var(--accent-color);">meaningful</em><br>digital
                     experiences.</h2>
                 <p class="text-secondary mb-4" style="line-height: 1.8;">
-                    I'm an MCA student passionate about Python Full Stack Development, AI and building clean, efficient
-                    and scalable web applications. I enjoy learning new technologies and solving real-world problems
-                    through code.
+                    I’m an MCA student passionate about Python Full Stack Development and building clean, user-friendly
+                    web applications. I enjoy learning new technologies and creating practical solutions through code.
+                    I like turning ideas into functional digital experiences that are simple and useful. I’m
+                    continuously improving my skills by working on real-world projects and exploring modern
+                    technologies.
                 </p>
                 <a href="#experience" class="btn-primary-custom">More About Me <i class="fas fa-arrow-right"></i></a>
 
@@ -141,58 +144,130 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="projects-section">
+<!-- Projects Section -->
+<section id="projects" class="projects-section py-5">
     <div class="container">
+
+        <!-- Section Header -->
         <div class="d-flex justify-content-between align-items-center mb-5" data-aos="fade-up">
             <div class="section-tag mb-0">Featured Projects</div>
-            <a href="https://github.com/fullstack-kallu" target="_blank" class="text-primary-custom"
-                style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">View All Projects <i
-                    class="fas fa-arrow-right ms-1"></i></a>
+
+            <a href="https://github.com/fullstack-kallu" target="_blank" class="view-projects-link">
+                View All Projects
+                <i class="fas fa-arrow-right ms-1"></i>
+            </a>
         </div>
 
+        <!-- Project Cards -->
         <div class="row g-4">
+
             {% for project in projects %}
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+            {% if 'SHOPZEN' not in project.title %}
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
+
                 <div class="project-card">
+
+                    <!-- Project Image -->
                     <div class="project-img-wrapper">
+
                         {% if 'SHOPZEN' in project.title %}
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#384A36 0%,#5a7a56 100%);color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:1px;">
-                            <i class="fas fa-shopping-bag fa-2x" style="opacity:0.6;"></i>
-                        </div>
+
+                        <img src="{% static 'core/shopzen.png' %}" alt="{{ project.title }}">
+
                         {% elif 'Blood Bank' in project.title %}
+
                         <img src="{% static 'core/user page.png' %}" alt="{{ project.title }}">
+
                         {% elif 'PowerTrack' in project.title %}
+
                         <img src="{% static 'core/powertrack landing page.png' %}" alt="{{ project.title }}">
+
                         {% elif 'QEval' in project.title %}
+
                         <img src="{% static 'core/landing page.png' %}" alt="{{ project.title }}">
+
                         {% else %}
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#EBE5D9 0%,#d4cbb8 100%);color:#384A36;font-size:1.2rem;font-weight:600;">
-                            <i class="fas fa-code fa-2x" style="opacity:0.4;"></i>
+
+                        <div class="default-project-image">
+                            <i class="fas fa-code fa-2x"></i>
                         </div>
+
                         {% endif %}
+
                     </div>
+
+                    <!-- Project Body -->
                     <div class="project-body">
-                        <div class="project-title">
-                            {{ project.title|truncatechars:20 }}
-                            <a href="{{ project.github_link|default:project.link|default:'#' }}" class="btn-icon-only" target="_blank"
-                            style="width: 32px; height: 32px;">
-                            <i class="fas fa-arrow-up-right-from-square fa-sm"></i>
-                        </a></div>
-                        <div class="project-type">{{ project.title|slice:"22:"|default:"Web Application" }}</div>
-                        <p class="project-desc">{{ project.description|truncatechars:100 }}</p>
-                        <div class="d-flex flex-wrap">
-                            {% for tech in project.technologies.split %}
-                            <span class="tech-badge">{{ tech }}</span>
-                            {% endfor %}
+
+                        <!-- Title -->
+                        <div class="project-title-wrapper">
+
+                            <h3 class="project-title">
+                                {{ project.title }}
+                            </h3>
+
+                            <a href="{{ project.github_link|default:project.link|default:'#' }}" class="btn-icon-only"
+                                target="_blank">
+
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+
+                            </a>
+
                         </div>
+
+                        <!-- Project Type -->
+                        <div class="project-type">
+
+                            {% if 'SHOPZEN' in project.title %}
+                            E-Commerce Platform
+
+                            {% elif 'Blood Bank' in project.title %}
+                            Blood Bank Management System
+
+                            {% elif 'PowerTrack' in project.title %}
+                            Electricity Complaint Management System
+
+                            {% elif 'QEval' in project.title %}
+                            AI-Based Question Evaluation System
+
+                            {% else %}
+                            Web Application
+                            {% endif %}
+
+                        </div>
+
+                        <!-- Description -->
+                        <p class="project-desc">
+                            {{ project.description|truncatewords:20 }}
+                        </p>
+
+                        <!-- Technologies -->
+                        <div class="tech-stack">
+
+                            {% for tech in project.technologies.split %}
+
+                            <span class="tech-badge">
+                                {{ tech|cut:"," }}
+                            </span>
+
+                            {% endfor %}
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
+
+            {% endif %}
             {% endfor %}
+
         </div>
+
     </div>
 </section>
-
 <!-- Experience & Let's Connect -->
 <section id="experience" class="experience-section">
     <div class="container">
