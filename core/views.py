@@ -59,7 +59,7 @@ def contact(request):
             message_body = f"From: {form.cleaned_data['name']} <{form.cleaned_data['email']}>\n\nMessage:\n{form.cleaned_data['message']}"
             send_mail(subject, message_body, settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER], fail_silently=False)
             messages.success(request, 'Your message has been sent successfully!')
-            return redirect('contact')
+            return redirect('/#contact')
     else:
         form = ContactForm()
     return render(request, 'core/contact.html', {'form': form})

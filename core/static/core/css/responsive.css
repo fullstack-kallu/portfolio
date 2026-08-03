@@ -1,73 +1,160 @@
 /* Responsive adjustments */
-@media (max-width: 767.98px) {
+@media (max-width: 968.98px) {
+
   /* Mobile */
   .navbar {
     padding: 10px 0;
   }
+
   .navbar-brand {
     font-size: 1.25rem;
   }
+
   .nav-link {
     font-size: 0.9rem;
     padding: 6px 12px !important;
   }
+
   .hero-section {
     padding: 60px 0;
   }
+
+  /* earthy-elegant design (home.html) classes */
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
+    /* Forces smaller size on mobile */
+    word-break: break-word;
+    /* Prevents long words from overflowing */
   }
+
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem !important;
   }
+
   .hero-img {
     max-width: 250px;
   }
-  .section-title {
-    font-size: 2rem;
+
+  .project-img-wrapper {
+    height: 150px;
   }
+
+  /* Prevent horizontal scrolling on mobile */
+  body, html {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+
+  /* Reduce vertical spacing between sections on mobile */
+  .about-section,
+  .projects-section,
+  .experience-section {
+    padding: 20px 0;
+  }
+
+  /* Ensure rows don't artificially stretch on mobile */
+  .about-section .row {
+    align-items: flex-start !important;
+  }
+
+  /* futuristic design (index.html) classes */
+  .hero-content h1.display-1 {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-content h2.h2 {
+    font-size: 1.2rem !important;
+  }
+
+  .floating-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Shared or other section classes */
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
   .skill-pill {
     font-size: 0.8rem;
     padding: 8px 16px;
   }
-  .project-img-wrapper {
-    height: 150px;
+
+  .project-img-container {
+    height: 200px;
   }
+
   .project-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
+
   .footer-wavy {
     padding: 40px 0 20px;
+    margin-top: 50px;
+    /* Overrides the desktop 100px margin */
   }
+
   .footer-logo {
     font-size: 2rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023.98px) {
+@media (min-width: 968px) and (max-width: 1623.98px) {
+
   /* Tablet */
   .navbar {
     padding: 15px 0;
   }
+
+  /* earthy-elegant design (home.html) classes */
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.5rem !important;
   }
+
   .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.25rem !important;
   }
+
   .hero-img {
     max-width: 300px;
   }
-  .section-title {
-    font-size: 2.3rem;
-  }
+
   .project-img-wrapper {
     height: 180px;
   }
-  .project-title {
-    font-size: 1.1rem;
+
+  /* Reduce vertical spacing between sections on tablet */
+  .about-section,
+  .projects-section,
+  .experience-section {
+    padding: 60px 0;
   }
+
+  /* futuristic design (index.html) classes */
+  .hero-content h1.display-1 {
+    font-size: 4rem !important;
+  }
+
+  .hero-content h2.h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Shared or other section classes */
+  .section-title {
+    font-size: 2.3rem !important;
+  }
+
+  .project-img-container {
+    height: 220px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
   .footer-wavy {
     padding: 50px 0 30px;
+    margin-top: 70px;
   }
 }
